@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Alchemy of Living - Life Coaching with Pratima</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --primary-color: #CFE3DC;
+            --secondary-color: #E8CFCF;
+            --accent-color: #D4A373;
+            --light-neutral: #F9F6F0;
+            --dark-neutral: #2E4F4F;
+            --text-primary: #333;
+            --text-secondary: #666;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(207, 227, 220, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--dark-neutral);
+        }
+
+        .tagline {
+            font-size: 0.8em;
+            font-weight: 300;
+            color: #8B6F47;
+            font-style: italic;
+            font-family: 'Dancing Script', 'Brush Script MT', cursive;
+            margin-top: 2px;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .tagline::before {
+            content: '✨';
+            font-size: 0.7em;
+            margin-right: 5px;
+            opacity: 0.7;
+        }
+        
+        .tagline::after {
+            content: '✨';
+            font-size: 0.7em;
+            margin-left: 5px;
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-neutral);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: var(--dark-neutral);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23ffffff" opacity="0.1"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="30" r="1.5" fill="%23ffffff" opacity="0.1"><animate attributeName="opacity" values="0.1;0.4;0.1" dur="4s" repeatCount="indefinite"/></circle><circle cx="40" cy="70" r="1" fill="%23ffffff" opacity="0.1"><animate attributeName="opacity" values="0.1;0.5;0.1" dur="2s" repeatCount="indefinite"/></circle></svg>') repeat;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: var(--dark-neutral);
+            font-weight: 400;
+            line-height: 1.2;
+            font-family: 'Crimson Text', 'Times New Roman', serif;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        
+        .hero-tagline {
+            font-size: 1.4em;
+            font-style: italic;
+            color: #444;
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-weight: 300;
+            margin-top: 15px;
+            letter-spacing: 0.8px;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(212, 163, 115, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 163, 115, 0.4);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .section.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section:nth-child(even) {
+            background: var(--light-neutral);
+        }
+
+        .section h2 {
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-neutral);
+            font-family: 'Playfair Display', 'Times New Roman', serif;
+            font-weight: 600;
+            font-style: italic;
+            background: linear-gradient(135deg, var(--dark-neutral) 0%, var(--accent-color) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+            position: relative;
+            transform: skew(-8deg);
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--accent-color), var(--dark-neutral));
+            border-radius: 2px;
+        }
+
+        /* Meet Pratima Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .profile-image {
+            position: relative;
+        }
+
+        .profile-image img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .about-text .highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2em;
+            color: var(--dark-neutral);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-family: 'Dancing Script', 'Brush Script MT', cursive;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Is This You Section */
+        .section-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-intro img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border: 3px solid var(--primary-color);
+            transition: all 0.3s ease;
+            filter: brightness(1.1) contrast(1.05);
+            background: white;
+            padding: 10px;
+        }
+
+        .section-intro img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            border-color: var(--accent-color);
+        }
+
+        .checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .check-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .check-icon {
+            color: var(--accent-color);
+            font-size: 1.2em;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* What If You Could Section */
+        .possibilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .possibility-item {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .possibility-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .possibility-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .possibility-icon {
+            font-size: 2em;
+            color: var(--accent-color);
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .possibility-item h3 {
+            color: var(--dark-neutral);
+            margin-bottom: 0;
+            font-size: 1.3em;
+        }
+
+        .possibility-description {
+            width: 100%;
+        }
+
+        .possibility-description p {
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: var(--primary-color);
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--dark-neutral);
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--secondary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 200px;
+        }
+
+        /* Contact Section - Updated with Form */
+        .contact-section {
+            background: var(--light-neutral);
+            padding: 80px 0;
+        }
+
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .contact-intro h2 {
+            font-size: 2.5em;
+            color: var(--dark-neutral);
+            margin-bottom: 20px;
+        }
+
+        .contact-intro p {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* Contact Form Styles */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            color: var(--dark-neutral);
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark-neutral);
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: var(--light-neutral);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.1);
+            background: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #c1935f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 163, 115, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Contact Info Styles */
+        .contact-info {
+            padding: 20px 0;
+        }
+
+        .contact-info h3 {
+            color: var(--dark-neutral);
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-icon {
+            font-size: 1.5em;
+            color: var(--accent-color);
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            color: var(--dark-neutral);
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .contact-details p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: #c1935f;
+        }
+
+        .availability-note {
+            background: var(--primary-color);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .availability-note p {
+            color: var(--dark-neutral);
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        /* Visual Elements */
+        .visual-element {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .visual-element img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .transformation-visual {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .transformation-visual {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        .transformation-arrow {
+            font-size: 2em;
+            color: var(--accent-color);
+        }
+
+        .heart-section-image {
+            max-width: 200px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-neutral);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-signature {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+        }
+
+        .floating-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .floating-cta .cta-button {
+            background: var(--dark-neutral);
+            box-shadow: 0 5px 20px rgba(46, 79, 79, 0.3);
+        }
+
+        /* Form Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideInDown 0.5s ease;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+            @media (max-width: 768px) {
+                .section-intro > div {
+                    grid-template-columns: 1fr !important;
+                    gap: 20px !important;
+                }
+                
+                .section-intro > div > div:last-child {
+                    text-align: center !important;
+                }
+                
+                /* Image-text layouts on mobile */
+                .visual-element > div,
+                .transformation-visual > div,
+                div[style*="grid-template-columns: 1fr 2fr"] {
+                    grid-template-columns: 1fr !important;
+                    gap: 20px !important;
+                }
+                
+                .visual-element > div > div,
+                .transformation-visual > div > div,
+                div[style*="grid-template-columns: 1fr 2fr"] > div {
+                    text-align: center !important;
+                }
+                
+                /* Specific mobile fixes for transformation section */
+                .transformation-container {
+                    display: block !important;
+                }
+                
+                .transformation-container > div {
+                    margin-bottom: 20px;
+                    text-align: center !important;
+                }
+                
+                .transformation-arrow {
+                    transform: rotate(90deg) !important;
+                    font-size: 2em !important;
+                    display: block !important;
+                    text-align: center !important;
+                    margin: 10px 0 !important;
+                }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section h2 {
+                font-size: 2.2em;
+            }
+
+            .possibilities {
+                grid-template-columns: 1fr;
+            }
+
+            .checklist {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .transformation-visual {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .transformation-arrow {
+                transform: rotate(90deg);
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .floating-cta {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .floating-cta .cta-button {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <div>The Alchemy of Living</div>
+                <div class="tagline">Life Coaching with Pratima</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#programs">Our Coaching Program</a></li>
+                <li><a href="#journey">Your Journey</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Find your Way Within</h1>
+            <div class="hero-tagline">There's a life you've imagined… now let's start living it</div>
+            <p>If you've ever felt stuck, unsure of your next step, or like you're just going through the motions—this is your sign. <strong>You're meant for more.</strong></p>
+            <a href="#contact" class="cta-button">Start Your Journey</a>
+        </div>
+    </section>
+
+    <!-- Meet Pratima Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Meet Pratima</h2>
+            <div class="about-grid">
+                <div class="profile-image">
+                    <img src="images/about.jpg" alt="Pratima - Life Coach">
+                </div>
+                <div class="about-text">
+                    <div class="quote">"I wasn't always the confident, purpose-driven coach you see today."</div>
+                    
+                    <p>A few years ago, I was just like you—searching for meaning, battling self-doubt, and feeling like life was happening <strong>to</strong> me instead of <strong>for</strong> me. The deep, self-critical overthinking. The feeling of "something's missing." The questioning, "Is this all there is?"</p>
+                    
+                    <p>I was stuck in this vicious cycle of thoughts, playing small, and wondering when my <em>real</em> life would begin. Then everything shifted — when I paused and looked <strong>within.</strong></p>
+                    
+                    <div class="quote">"I believe the most powerful journey we'll ever take... is the one within. Every transformation begins with a choice — a choice to go within."</div>
+                    
+                    <p>Hi, I'm <span class="highlight">Pratima</span>, a certified Life Coach under the mentorship of Maalica Ravikumar, here to help you rediscover the most important relationship of all: the one with yourself.</p>
+                    
+                    <p>On a mission to help individuals reconnect with themselves, build clarity, and create lasting change, I will guide you to step into your authentic power and take aligned action toward a life of purpose, balance, and fulfilment — without burning out, hiding, or waiting for "someday."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Is This You Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Is This You?</h2>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h3 style="font-size: 1.8em; font-family: 'Cinzel', serif; font-weight: 600; color: var(--accent-color); background: linear-gradient(135deg, var(--accent-color) 0%, var(--dark-neutral) 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); letter-spacing: 1px; margin-bottom: 20px;">One-On-One Coaching with Pratima Leninkumar - LifeCoach</h3>
+            </div>
+            
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 40px; color: var(--text-secondary); font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;"><strong>Before you go further, let's get honest...</strong></p>
+            
+            <div class="section-intro">
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; margin: 40px 0;">
+                    <div>
+                        <img src="images/isthisyou.png" alt="Self-reflection moment" style="width: 100%; max-width: 300px; height: auto; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); border: 3px solid var(--primary-color); transition: all 0.3s ease; filter: brightness(1.1) contrast(1.05); background: white; padding: 10px;">
+                    </div>
+                    <div style="text-align: left;">
+                        <p style="margin-bottom: 40px; font-size: 1.1em; line-height: 1.8;">We all reach a moment when the life we're living no longer matches the life we <em>want</em>. But sometimes, it's not easy to admit we're stuck — even to ourselves.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; font-weight: bold; margin-bottom: 30px; font-size: 1.1em;">Take a deep breath and see if any of these feel familiar:</p>
+            
+            <div class="checklist">
+                <div class="check-item">
+                    <div class="check-icon">✅</div>
+                    <div>"I know I want more... but I don't even know what that 'more' is."</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✅</div>
+                    <div>"I have goals, but I keep sabotaging myself before I get anywhere."</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✅</div>
+                    <div>"I constantly doubt myself and second-guess every decision I make."</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✅</div>
+                    <div>"I'm exhausted from trying to 'figure it all out' on my own."</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✅</div>
+                    <div>"I smile on the outside, but inside, I feel overwhelmed, behind, or disconnected."</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✅</div>
+                    <div>"I'm tired of starting over. I want to follow through for once — with courage."</div>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✅</div>
+                    <div>"I've done the journaling, the podcasts, the self-help books... but nothing's changing."</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <h3 style="color: var(--accent-color); margin-bottom: 20px;">Sound familiar?</h3>
+                <p style="margin-bottom: 30px;">That's not a sign of failure — it's a sign you're ready for something <em>real</em>. These aren't just passing thoughts. These are your inner truth trying to rise to the surface.</p>
+                
+                <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); max-width: 600px; margin: 30px auto;">
+                    <h4 style="color: var(--dark-neutral); margin-bottom: 20px;">You may be:</h4>
+                    <ul style="text-align: left; color: var(--text-secondary); line-height: 1.8; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">🌿 <em>Stuck in <strong>cycles of fear</strong> or <strong>perfectionism</strong></em></li>
+                        <li style="margin-bottom: 10px;">🌿 <em>Holding onto <strong>old stories</strong> that say you're not enough</em></li>
+                        <li style="margin-bottom: 10px;">🌿 <em>Afraid to take action because of what it might cost — or who you might lose</em></li>
+                        <li style="margin-bottom: 10px;">🌿 <em>Emotionally exhausted from being <strong>everything for everyone but yourself</strong></em></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What If You Could Section -->
+    <section id="journey" class="section">
+        <div class="container">
+            <h2>What If You Could...</h2>
+            
+            <div class="possibilities">
+                <div class="possibility-item">
+                    <div class="possibility-header">
+                        <div class="possibility-icon">🚀</div>
+                        <div>
+                            <h3>Silence your inner critic and step into your power?</h3>
+                        </div>
+                    </div>
+                    <div class="possibility-description">
+                        <p>No more second-guessing. No more "I'm not ready." Just bold, unapologetic action.</p>
+                    </div>
+                </div>
+                
+                <div class="possibility-item">
+                    <div class="possibility-header">
+                        <div class="possibility-icon">⚡</div>
+                        <div>
+                            <h3>Turn dreams into action without burnout or overwhelm?</h3>
+                        </div>
+                    </div>
+                    <div class="possibility-description">
+                        <p>Finally make progress without the exhausting cycle of hustle → crash → guilt.</p>
+                    </div>
+                </div>
+                
+                <div class="possibility-item">
+                    <div class="possibility-header">
+                        <div class="possibility-icon">💎</div>
+                        <div>
+                            <h3>Build unshakable confidence?</h3>
+                        </div>
+                    </div>
+                    <div class="possibility-description">
+                        <p>Not just "Fake it till you make it." Real, deep self-trust—so you stop seeking validation and start trusting your choices.</p>
+                    </div>
+                </div>
+                
+                <div class="possibility-item">
+                    <div class="possibility-header">
+                        <div class="possibility-icon">🌟</div>
+                        <div>
+                            <h3>Handle setbacks without spiralling?</h3>
+                        </div>
+                    </div>
+                    <div class="possibility-description">
+                        <p>Life will always throw curveballs—but you'll learn to catch them, adapt, and keep moving forward.</p>
+                    </div>
+                </div>
+                
+                <div class="possibility-item">
+                    <div class="possibility-header">
+                        <div class="possibility-icon">💪</div>
+                        <div>
+                            <h3>Become emotionally strong—not "tough"?</h3>
+                        </div>
+                    </div>
+                    <div class="possibility-description">
+                        <p>Strength isn't about suppressing emotions. It's about feeling them fully... without letting them control you.</p>
+                    </div>
+                </div>
+                
+                <div class="possibility-item">
+                    <div class="possibility-header">
+                        <div class="possibility-icon">✨</div>
+                        <div>
+                            <h3>Create a life that excites you—not just one you tolerate?</h3>
+                        </div>
+                    </div>
+                    <div class="possibility-description">
+                        <p>Imagine waking up energized, knowing you're living your version of success—not someone else's.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3 style="color: var(--accent-color); margin-bottom: 20px; font-style: italic; font-size: 1.8em; font-family: 'Dancing Script', 'Brush Script MT', cursive; letter-spacing: 1px;">This isn't just positive thinking...</h3>
+                
+                <div class="visual-element">
+                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center;">
+                        <div>
+                            <img src="images/positivethinking.png" alt="Beyond positive thinking" style="width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        </div>
+                        <div>
+                            <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 30px 0; max-width: 800px; margin-left: auto; margin-right: auto;">
+                                <h4 style="color: var(--dark-neutral); margin-bottom: 20px; font-size: 1.3em;">Here's the truth:</h4>
+                                <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">You're not broken. You're not behind. You're just at a turning point — and <strong>The Way Within</strong> was designed to meet you right here.</p>
+                                <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">Let's clear the noise, quiet the fear, and start walking toward the version of you that's been waiting.</p>
+                                <p style="font-size: 1.2em; color: var(--accent-color); font-weight: bold;"><em>You don't have to do it alone anymore.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 2em; color: var(--dark-neutral); margin-bottom: 20px; margin-top: 50px;" id="programs">"The Way Within" — Your Transformation Awaits</h3>
+                
+                <div>
+                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; margin-bottom: 40px;">
+                        <div>
+                            <div class="transformation-container" style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center;">
+                                <div style="text-align: center;">
+                                    <img src="images/left_image.png" alt="Before transformation" style="max-width: 200px; border-radius: 15px;">
+                                    <p style="margin-top: 10px; color: var(--text-secondary);">Before</p>
+                                </div>
+                                <div class="transformation-arrow">→</div>
+                                <div style="text-align: center;">
+                                    <img src="images/right_image.png" alt="After transformation" style="max-width: 200px; border-radius: 15px;">
+                                    <p style="margin-top: 10px; color: var(--accent-color); font-weight: bold;">After</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: left;">
+                            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 25px;">Picture this: a journey where you gently uncover the hidden fears whispering "you're not enough" and transform them into a quiet, unshakable confidence that says, <em>"Watch me."</em> You'll peel away the layers of self-doubt and step into a mindset where possibilities feel expansive, not limited. No more dimming your light to fit in—this is about embracing the bold, authentic version of yourself that's been waiting to emerge.</p>
+                            
+                            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 25px;">You'll gain crystal clarity about what truly sets your soul on fire—not what others expect of you, but the dreams that make your heart race with excitement. With this newfound vision, you'll set goals that energize rather than drain you, aligning your daily actions with a life that feels purposeful and alive. Procrastination and perfectionism will lose their grip as you learn simple, powerful strategies to take consistent, fearless action—building unstoppable momentum, one intentional step at a time.</p>
+                            
+                            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 25px;">And when challenges arise (because they will), you won't just survive them—you'll thrive through them. Setbacks will become stepping stones, obstacles will fuel your growth, and resilience will become your superpower. Imagine looking back a year from now and realizing: <em>you trust yourself.</em> You no longer second-guess your decisions or shrink from opportunities. Instead, you move through life with quiet confidence, knowing—<em>deep down</em>—that you are capable of more than you ever imagined.</p>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <p style="font-size: 2em; color: var(--accent-color); font-weight: bold; font-style: italic; font-family: 'Dancing Script', 'Brush Script MT', cursive; letter-spacing: 1px;">That's the power of "The Way Within."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Than Motivation Section -->
+    <section class="section">
+        <div class="container">
+            <h2>More Than Motivation — Lasting Change</h2>
+            
+            <div style="max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.2em; text-align: center; margin-bottom: 40px; color: var(--text-secondary);">This isn't about quick fixes—it's about building real strength from the inside out that lasts.</p>
+                
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 30px 0;">
+                    <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 25px;"><strong><em style="font-family: 'Dancing Script', 'Brush Script MT', cursive; font-size: 1.2em; letter-spacing: 1px;">The Way Within</em></strong> helps you handle life's tough moments with confidence. You'll learn to take criticism without falling apart—not by ignoring it, but by knowing what to take seriously and what to let go. When things feel uncertain, you'll stay calm and adapt instead of panicking.</p>
+                    
+                    <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 25px;">Tough emotions like fear or anger won't control you—you'll feel them fully but keep moving forward. You'll say 'no' without guilt, protect your energy, and stop over giving to others. When setbacks happen (and they will), you'll bounce back faster, using failures as lessons to grow stronger.</p>
+                    
+                    <p style="font-size: 2em; color: var(--accent-color); font-weight: bold; text-align: center; margin-top: 30px; font-style: italic; font-family: 'Dancing Script', 'Brush Script MT', cursive; letter-spacing: 1px;">Not a temporary high, but a deep, unshakable foundation.</p>
+                </div>
+                
+                <div style="text-align: center; margin-top: 50px;">
+                    <h3 style="color: var(--dark-neutral); margin-bottom: 20px; font-size: 1.5em;">What if the answers I've been seeking... start here?</h3>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; margin: 40px 0;">
+                    <div class="visual-element">
+                        <img src="images/thinking.png" alt="You Got This" style="width: 100%; max-width: 300px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    </div>
+                    <div>
+                        <div style="background: var(--light-neutral); padding: 30px; border-radius: 15px; margin: 30px 0;">
+                            <h4 style="color: var(--dark-neutral); margin-bottom: 25px; text-align: center;">You Might Be Thinking...</h4>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 8px;"><strong>❓ "But I've tried self-help books/courses before!"</strong></p>
+                                <p style="color: var(--accent-color); margin-left: 20px;">→ <strong>Coaching is different.</strong> It's personalized, interactive, and <em>holds you accountable</em>.</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 8px;"><strong>❓ "What if I 'fail' again?"</strong></p>
+                                <p style="color: var(--accent-color); margin-left: 20px;">→ <strong>Failure isn't the end—it's data.</strong> We'll use it to refine your path.</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 8px;"><strong>❓ "Can I actually change?"</strong></p>
+                                <p style="color: var(--accent-color); margin-left: 20px;">→ <strong>Yes.</strong> If you're willing to take one small step, the rest will follow.</p>
+                            </div>
+                            
+                            <p style="text-align: center; margin-top: 25px; font-style: italic;"><strong>Still unsure?</strong> Let's chat—no pressure, just honest conversation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Next Step Section -->
+    <section class="section">
+        <div class="container">
+            <h2>Your Next Step</h2>
+            
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h3 style="color: var(--accent-color); margin-bottom: 30px;">It's Simple. Here's How We Begin:</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, auto); gap: 30px; margin: 40px 0;">
+                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 2em; margin-bottom: 15px;">1️⃣</div>
+                        <h4 style="color: var(--dark-neutral); margin-bottom: 15px;">Book Your Free Clarity Call</h4>
+                        <p>Let's connect and make sure we're a great fit.</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 2em; margin-bottom: 15px;">2️⃣</div>
+                        <h4 style="color: var(--dark-neutral); margin-bottom: 15px;">Choose Your Path</h4>
+                        <p>Pick your coaching package offered in Tamil and English.</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; grid-column: 1 / 3; max-width: 400px; margin: 0 auto;">
+                        <div style="font-size: 2em; margin-bottom: 15px;">3️⃣</div>
+                        <h4 style="color: var(--dark-neutral); margin-bottom: 15px;">Begin The Way Within</h4>
+                        <p>Through one-on-one interactive sessions, tools, and deep transformation.</p>
+                    </div>
+                </div>
+                
+                <p style="color: var(--accent-color); font-size: 2em; margin-top: 30px; font-weight: bold; font-style: italic; font-family: 'Dancing Script', 'Brush Script MT', cursive; letter-spacing: 1px;">🧡 <em>No pressure. No judgment. Just support and strategy tailored to you.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- From My Heart Section -->
+    <section class="section">
+        <div class="container">
+            <h2>🌿 From My Heart to Yours</h2>
+            
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <img src="images/frommyheart.jpg" alt="Pratima - Heart to Yours" class="heart-section-image">
+                
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px;">
+                    <div class="quote" style="font-size: 1.3em; margin-bottom: 30px;">"You don't have to have it all figured out—you just have to start."</div>
+                    
+                    <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 25px;">I've been where you are. I know how it feels. And I <em>also</em> know what's possible when you decide <strong>you're worth the investment.</strong></p>
+                    
+                    <p style="font-size: 2em; color: var(--accent-color); font-weight: bold; margin-bottom: 30px; font-style: italic; font-family: 'Dancing Script', 'Brush Script MT', cursive; letter-spacing: 1px;">Let's find your Way Within—together.</p>
+                    
+                    <div style="border-top: 2px solid var(--primary-color); padding-top: 25px;">
+                        <p style="font-style: italic; margin-bottom: 10px;">With You,</p>
+                        <p style="font-weight: bold; font-size: 1.1em; color: var(--dark-neutral);">Pratima Leninkumar</p>
+                        <p style="color: var(--text-secondary);">Certified Life Coach | Believer in Your Potential</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q: Is this therapy? <i class="fas fa-chevron-down" style="float: right;"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>No — life coaching is future-focused and action-oriented. We won't dive deep into past trauma, but we will help you navigate the present and create your future.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q: I've never done coaching. Is this for beginners? <i class="fas fa-chevron-down" style="float: right;"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>100%! This program is designed for those just starting their journey of self-awareness and growth.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Q: What if I miss a session? <i class="fas fa-chevron-down" style="float: right;"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Life happens! We can reschedule, and you'll have access to materials even if you miss a session.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-intro">
+                <h2>📞 Ready to Begin?</h2>
+                <p>Your journey starts with one step inward. Let's connect and explore how we can work together to unlock your potential.</p>
+            </div>
+            
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> Thank you for your message! I'll get back to you within 24 hours.
+                    </div>
+                    
+                    <form id="contactForm" action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Please select a subject</option>
+                                <option value="Free Clarity Call">Book a Free Clarity Call</option>
+                                <option value="Coaching Programs">Learn About Coaching Programs</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Partnership">Partnership Opportunity</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell me a bit about yourself and what you're looking for. What challenges are you facing? What would you like to achieve?" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Book a Free Clarity Call</h4>
+                            <p>Ready to take the first step? Let's have a conversation about your goals and see if we're a perfect fit.</p>
+                            <a href="mailto:lifenavigatorpratima@gmail.com?subject=Free Clarity Call Request">Schedule Your Call</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Me Directly</h4>
+                            <p>Have questions or want to learn more? Drop me a line and I'll respond personally.</p>
+                            <a href="mailto:lifenavigatorpratima@gmail.com">lifenavigatorpratima@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Follow on Instagram</h4>
+                            <p>Daily inspiration, coaching tips, and behind-the-scenes glimpses of transformation.</p>
+                            <a href="https://www.instagram.com/pratima.leninkumar" target="_blank">@pratima.leninkumar</a>
+                        </div>
+                    </div>
+                    
+                    <div class="availability-note">
+                        <p><strong>Coaching Available:</strong> Tamil & English<br>
+                        <strong>Response Time:</strong> Within 24 hours<br>
+                        <strong>Time Zone:</strong> IST (UTC +5:30)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-signature">
+                    <p>"You don't have to have it all figured out—you just have to start."</p>
+                    <p><strong>With You,</strong></p>
+                    <p><strong style="font-family: 'Dancing Script', 'Brush Script MT', cursive; color: var(--accent-color); font-size: 2.2em; font-style: italic; letter-spacing: 1px;">Pratima Leninkumar</strong><br>
+                    Certified Life Coach | Believer in Your Potential</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="mailto:lifenavigatorpratima@gmail.com">Email</a>
+                    <a href="https://www.instagram.com/pratima.leninkumar" target="_blank">Instagram</a>
+                </div>
+                
+                <p>&copy; 2025 The Alchemy of Living. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <a href="#contact" class="cta-button">Book Free Call</a>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // FAQ toggle
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            answer.classList.toggle('active');
+            
+            if (answer.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Contact Form Handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+            
+            // In a real implementation, you would send the data to your server
+            console.log('Form submitted with data:', data);
+            
+            // You can integrate with services like:
+            // - Formspree (https://formspree.io/)
+            // - Netlify Forms
+            // - EmailJS
+            // - Or your own backend API
+        });
+
+        // Form validation feedback
+        const inputs = document.querySelectorAll('input[required], textarea[required], select[required]');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    this.style.borderColor = '#e74c3c';
+                } else {
+                    this.style.borderColor = '#2ecc71';
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#2ecc71';
+                }
+            });
+        });
+
+        // Email validation
+        document.getElementById('email').addEventListener('blur', function() {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (this.value && !emailRegex.test(this.value)) {
+                this.style.borderColor = '#e74c3c';
+            } else if (this.value) {
+                this.style.borderColor = '#2ecc71';
+            }
+        });
+
+        // Phone number formatting (optional)
+        document.getElementById('phone').addEventListener('input', function() {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length >= 10) {
+                if (value.startsWith('91')) {
+                    // Indian number format
+                    value = '+91 ' + value.slice(2, 7) + ' ' + value.slice(7, 12);
+                } else {
+                    // General format
+                    value = value.slice(0, 3) + '-' + value.slice(3, 6) + '-' + value.slice(6, 10);
+                }
+            }
+            this.value = value;
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Floating CTA visibility
+        window.addEventListener('scroll', () => {
+            const floatingCta = document.querySelector('.floating-cta');
+            const heroHeight = document.querySelector('.hero').offsetHeight;
+            
+            if (window.scrollY > heroHeight) {
+                floatingCta.classList.add('visible');
+            } else {
+                floatingCta.classList.remove('visible');
+            }
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(207, 227, 220, 0.98)';
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.background = 'rgba(207, 227, 220, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add interactive elements
+        document.querySelectorAll('.possibility-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Initialize animations when page loads
+        setTimeout(() => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0)';
+            });
+        }, 500);
+    </script>
+</body>
+</html>
